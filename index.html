@@ -1,1 +1,24 @@
-Hi ! 
+<html>
+    <head>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="routing.js"></script>
+
+        <!-- Controllers -->
+        <script type="text/javascript" src="src/controllers/categoryController.js"></script>
+        <script type="text/javascript" src="src/controllers/itemController.js"></script>
+
+        <!-- Directives -->
+        <script type="text/javascript" src="src/directives/itemDecoratorDirective.js"></script>
+
+        <!-- Services -->
+        <script type="text/javascript" src="src/services/itemProvider.js"></script>
+        <script type="text/javascript" src="src/services/categoryProvider.js"></script>
+    </head>
+    <body ng-app="demo">
+
+    <div ng-view></div>
+
+    </body>
+</html>
