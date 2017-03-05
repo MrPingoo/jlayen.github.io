@@ -8,8 +8,11 @@
         <script type="text/javascript" src="bower_components/marked/lib/marked.js"></script>
         <script type="text/javascript" src="bower_components/angular-marked/dist/angular-marked.js"></script>
         <script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
+        <script type="text/javascript" src="bower_components/highlightjs/highlight.pack.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="routing.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="bower_components/highlightjs/styles/atelier-dune-light.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -42,9 +45,8 @@
             <h1>{{ article.title }}</h1>
             <p>{{ article.description }}</p>
 
-            <marked>
-                {{ article.body }}
-            </marked>
+            <div marked="article.body">
+            </div>
 
         </div>
     </script>
