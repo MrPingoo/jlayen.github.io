@@ -3,17 +3,13 @@
 app.config(
     function ($routeProvider) {
         $routeProvider
-            .when('/items/', {
-                controller : 'itemList',
-                templateUrl: 'views/item/list.html'
-            })
             .when('/', {
-                controller : 'itemList',
-                templateUrl: 'views/item/list.html'
+                controller : 'articleIndex',
+                templateUrl: 'views/article/index.html'
             })
-            .when('/items/new', {
-                controller : 'itemCreate',
-                templateUrl: 'views/item/create.html'
+            .when('/article/:id', {
+                controller : 'articleShow',
+                templateUrl: 'views/article/show.html'
             })
     }
 );

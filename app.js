@@ -1,9 +1,6 @@
 'use strict';
 
-var app = angular.module('demo', ['ngRoute', 'hc.marked']);
-
-
-var app = angular.module('demo', ['ngRoute', 'hc.marked'], function($httpProvider){
+var app = angular.module('app', ['ngRoute', 'hc.marked'] /*, function($httpProvider){
     if (!!window.FastClick) {
         FastClick.attach(document.body);
     }
@@ -15,11 +12,25 @@ var app = angular.module('demo', ['ngRoute', 'hc.marked'], function($httpProvide
             location.replace('#' + el.id);
         });
     }
-}]);
-
+}] */);
+/*
 app.config([
     '$interpolateProvider', function($interpolateProvider) {
         return $interpolateProvider.startSymbol('{(').endSymbol(')}');
     }
 ]);
+*/
 
+app.config(['markedProvider', function (markedProvider) {
+    markedProvider.setOptions({
+        gfm: true,
+        tables: true,
+        highlight: function (code, lang) {
+            if (lang) {
+                return hljs.highlight(lang, code, true).value;
+            } else {
+                return hljs.highlightAuto(code).value;
+            }
+        }
+    });
+}]);
