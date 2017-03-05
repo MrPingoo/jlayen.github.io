@@ -14,12 +14,14 @@ var app = angular.module('app', ['ngRoute', 'hc.marked'], function($httpProvider
     }
 }]);
 
-/* For production mode */
+/* For production mode*/
 app.config([
     '$interpolateProvider', function($interpolateProvider) {
         return $interpolateProvider.startSymbol('{(').endSymbol(')}');
     }
 ]);
+
+
 
 app.config(['markedProvider', function (markedProvider) {
     markedProvider.setOptions({
