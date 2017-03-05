@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['ngRoute', 'hc.marked'] /*, function($httpProvider){
+var app = angular.module('app', ['ngRoute', 'hc.marked'], function($httpProvider){
     if (!!window.FastClick) {
         FastClick.attach(document.body);
     }
@@ -12,14 +12,14 @@ var app = angular.module('app', ['ngRoute', 'hc.marked'] /*, function($httpProvi
             location.replace('#' + el.id);
         });
     }
-}] */);
-/*
+}]);
+
 app.config([
     '$interpolateProvider', function($interpolateProvider) {
         return $interpolateProvider.startSymbol('{(').endSymbol(')}');
     }
 ]);
-*/
+
 
 app.config(['markedProvider', function (markedProvider) {
     markedProvider.setOptions({
