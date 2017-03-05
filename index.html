@@ -12,7 +12,9 @@
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="routing.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="bower_components/highlightjs/styles/atelier-dune-light.css">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="bower_components/highlightjs/styles/github.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -30,31 +32,38 @@
         <script type="text/javascript" src="src/services/articleProvider.js"></script>
     </head>
     <body ng-app="app">
+        <div class="content">
+            <div ng-view></div>
 
-    <div ng-view></div>
-
-    <script type="text/ng-template" id="views/article/index.html">
-        <div ng-controller="articleIndex">
-            <div ng-repeat="article in articles">
-                <decorate-article></decorate-article>
-            </div>
+            <script type="text/ng-template" id="views/article/index.html">
+                <header>
+                    <h1>Julian Layen</h1>
+                </header>
+                <div class="articles" ng-controller="articleIndex">
+                    <section>
+                        <div ng-repeat="article in articles">
+                            <decorate-article></decorate-article>
+                        </div>
+                    </section>
+                </div>
+            </script>
+            <script type="text/ng-template" id="views/article/show.html">
+                <div ng-controller="articleShow">
+                    <header>
+                        <h1>{{ article.title }}</h1>
+                    </header>
+                    <section class="article">
+                        <div marked="article.body">
+                        </div>
+                    </section>
+                </div>
+            </script>
+            <script type="text/ng-template" id="views/article/directive/decorator.html">
+                <article class="article">
+                    <h4><a ng-href="#!/article/{{ article.uri }}">{{ article.title }}</a><span class="date"><em>{{ article.date | date:'d LLLL yyyy' }}</em></span></h4>
+                    <p>{{ article.description }}</p>
+                </article>
+            </script>
         </div>
-    </script>
-    <script type="text/ng-template" id="views/article/show.html">
-        <div ng-controller="articleShow">
-
-            <div marked="article.body">
-            </div>
-
-        </div>
-    </script>
-    <script type="text/ng-template" id="views/article/directive/decorator.html">
-        <div class="article">
-            <!-- ng-click="showArticle(article.uri)" -->
-            <a ng-href="#!/article/{{ article.uri }}">{{ article.title }}</a>
-            <p>{{ article.description }}</p>
-        </div>
-    </script>
-
     </body>
 </html>
