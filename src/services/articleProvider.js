@@ -2,6 +2,7 @@
 
 // Article data
 var articles = [
+    {'title' : '#16 Preparation à la certification TYPO3 developer', 'description' : 'La communauté TYPO3 a lancé dernièrement deux nouvelles certifications, une certification editeur et une développeur en plus de la certification integrateur.', 'uri' : '', 'file' : '5.md', 'date' : new Date('2017-03-05')},
     {'title' : '#15 Preparation à la certification TYPO3 developer', 'description' : 'La communauté TYPO3 a lancé dernièrement deux nouvelles certifications, une certification editeur et une développeur en plus de la certification integrateur.', 'uri' : '', 'file' : '4.md', 'date' : new Date('2017-03-05')},
     {'title' : '#5 Preparation à la certification TYPO3 developer', 'description' : 'La communauté TYPO3 a lancé dernièrement deux nouvelles certifications, une certification editeur et une développeur en plus de la certification integrateur.', 'uri' : '', 'file' : '3.md', 'date' : new Date('2017-03-05')},
     {'title' : 'Maecenas sit amet orci dictum velit rutrum bibendum at nec sapien', 'description' : 'Fusce volutpat metus vel nulla eleifend, vel interdum orci posuere. Sed blandit ut ipsum eu tincidunt. In scelerisque velit non aliquet bibendum. Sed auctor vitae mauris eget scelerisque. Morbi et sem tristique, condimentum eros in, sagittis felis. Nam in mi a magna pulvinar finibus posuere nec erat.', 'uri' : 'posuere-nec-erat', 'file' : '2.md', 'date' : new Date('2017-03-03')},
